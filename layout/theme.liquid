@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     {{ content_for_header }}
-    <title>{% section.settings.title %}</title>
-    {{ 'style.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
     {{ content_for_layout }}
-
   </body>
-
 </html>
