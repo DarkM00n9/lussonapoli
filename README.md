@@ -1,5 +1,11 @@
 # Shopify Theme for Sales
 
+# Press
+
+- Document all new updates
+- Clean up unused
+- Have layout ready
+
 ## Overview
 
 Welcome to the official repository for Shopify Theme for sales. This Shopify theme is designed for online sales and provides a seamless and visually appealing shopping experience for your customers.
@@ -27,4 +33,3 @@ cd shopify_theme_sales
 
 
 ```
-

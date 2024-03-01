@@ -1,10 +1,32 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Media Theme",
+    "theme_name": "Media Theme Sales",
     "theme_version": "1.0.0",
-    "theme_author": "William Gregorio",
-    "theme_documentation_url": "https://blog.williamgregorio.com",
-    "theme_support_email": "mail@williamgregorio.com"
+    "theme_author": "WebSilk",
+    "theme_documentation_url": "https://api.media.websilk.net/doc/73452/content",
+    "theme_support_email": "support-developers@websilk.net"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "custom_test_color",
+        "label": "Test page background",
+        "default": "#EDEDED"
+      }
+    ]
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo_test_name",
+        "label": "Store name",
+        "default": "Media theme"
+      }
+    ]
   }
 ]
