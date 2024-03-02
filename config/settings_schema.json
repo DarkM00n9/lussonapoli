@@ -15,6 +15,22 @@
         "id": "header_logo",
         "label": "Header Logo",
         "info": "Your logo for the header"
+      },
+      {
+        "type": "color",
+        "id": "header_background_color",
+        "label": "Header Background Color",
+        "default": "#181818"
+      },
+      {
+        "type": "range",
+        "id": "header_background_opacity",
+        "label": "Header Background Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 95,
+        "unit": "%"
       }
     ]
   }

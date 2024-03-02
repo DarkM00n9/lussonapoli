@@ -1,11 +1,11 @@
-<header>
+<header id="header" data-bg-color="{{ settings.header_background_color }}" data-bg-opacity="{{ settings.header_background_opacity }}">
   <nav>
     {% if settings.header_logo %}
       <a href="/">
         <img src="{{ settings.header_logo | img_url: '150px' }}" alt="{{ shop.name }}" />
       </a> 
     {% else %}
-      <a href="/">{{ 'Logo' | t}}</a>
+      <a href="/">{{ 'Logo' }}</a>
     {% endif %}
     <ol>
       <span>Cart</span>
@@ -13,3 +13,34 @@
 
   </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let header = document.querySelector("#header");
+    let bgColor = header.getAttribute('data-bg-color');
+    let bgOpacity = header.getAttribute('data-bg-opacity');
+    let rgbaColor = hexToRGBA(bgColor, bgOpacity);
+    header.style.backgroundColor = rgbaColor;
+  })
+
+  function hexToRGBA(hex,opacity){
+    let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+
+  // Convert hex to RGB values
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (!result) {
+    return null;
+  }
+  
+  let r = parseInt(result[1], 16);
+  let g = parseInt(result[2], 16);
+  let b = parseInt(result[3], 16);
+
+  // Return the RGBA color with the specified opacity
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+  }
+  
+</script>
