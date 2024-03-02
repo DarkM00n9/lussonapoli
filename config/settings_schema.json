@@ -1,31 +1,20 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Media Theme Sales",
+    "theme_name": "Theme Sales",
     "theme_version": "1.0.0",
     "theme_author": "WebSilk",
     "theme_documentation_url": "https://api.media.websilk.net/doc/73452/content",
     "theme_support_email": "support-developers@websilk.net"
   },
   {
-    "name": "Colors",
+    "name": "Header",
     "settings": [
       {
-        "type": "color",
-        "id": "custom_test_color",
-        "label": "Test page background",
-        "default": "#EDEDED"
-      }
-    ]
-  },
-  {
-    "name": "Logo",
-    "settings": [
-      {
-        "type": "text",
-        "id": "logo_test_name",
-        "label": "Store name",
-        "default": "Media theme"
+        "type": "image_picker",
+        "id": "header_logo",
+        "label": "Header Logo",
+        "info": "Your logo for the header"
       }
     ]
   }

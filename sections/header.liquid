@@ -1,1 +1,15 @@
-<h1>Header</h1>
+<header>
+  <nav>
+    {% if settings.header_logo %}
+      <a href="/">
+        <img src="{{ settings.header_logo | img_url: '150px' }}" alt="{{ shop.name }}" />
+      </a> 
+    {% else %}
+      <a href="/">{{ 'Logo' | t}}</a>
+    {% endif %}
+    <ol>
+      <span>Cart</span>
+    </ol>
+
+  </nav>
+</header>
