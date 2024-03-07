@@ -37,9 +37,9 @@
         "id": "header_logo_size",
         "label": "Scale Logo",
         "min": 50,
-        "max": 75,
+        "max": 200,
         "step": 1,
-        "default": 50,
+        "default": 100,
         "unit": "px"
       }
     ]
