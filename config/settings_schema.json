@@ -31,6 +31,16 @@
         "step": 1,
         "default": 95,
         "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "header_logo_size",
+        "label": "Scale Logo",
+        "min": 50,
+        "max": 75,
+        "step": 1,
+        "default": 50,
+        "unit": "px"
       }
     ]
   }
