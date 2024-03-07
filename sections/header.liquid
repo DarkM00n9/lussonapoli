@@ -2,7 +2,7 @@
   <nav>
     {% if settings.header_logo %}
       <a href="/">
-        <img src="{{ settings.header_logo | img_url: '150px' }}" alt="{{ shop.name }}" style={{ settings.header_logo_size}}px; />
+        <img src="{{ settings.header_logo | img_url: 'master' }}" alt="{{ shop.name }}" style="max-width: {{ settings.header_logo_size }}px;"/>
       </a> 
     {% else %}
       <a href="/">{{ 'Logo' }}</a>
