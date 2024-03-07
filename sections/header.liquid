@@ -25,22 +25,24 @@
 
   function hexToRGBA(hex,opacity){
     let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  // Convert hex to RGB values
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) {
-    return null;
+    if (!result) {
+      return null;
   }
   
   let r = parseInt(result[1], 16);
   let g = parseInt(result[2], 16);
   let b = parseInt(result[3], 16);
 
-  // Return the RGBA color with the specified opacity
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+  let decimalOpacity = opacity / 100;
+
+  return `rgba(${r}, ${g}, ${b}, ${decimalOpacity})`;
   }
   
 </script>
