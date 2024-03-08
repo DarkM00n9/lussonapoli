@@ -38,7 +38,7 @@
         "label": "Scale Logo",
         "min": 50,
         "max": 200,
-        "step": 1,
+        "step": 2,
         "default": 100,
         "unit": "px"
       }
