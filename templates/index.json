@@ -1,14 +1,8 @@
 {
   "sections": {
-    "header": {
-      "type": "header"
-    },
     "main-body": {
       "type": "main"
-    },
-    "footer": {
-      "type": "footer"
     }
   },
-  "order": ["header", "main-body", "footer"]
+  "order": ["main-body"]
 }
