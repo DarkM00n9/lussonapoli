@@ -7,8 +7,10 @@
 }
 
 #header {
+  padding-top: 25px;
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 40px;
 }
 
 #header nav {
@@ -22,6 +24,15 @@
 }
 
 #footer {
+  color: #fff;
+  padding-top: 33px;
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 25px;
+}
+
+#footer section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
