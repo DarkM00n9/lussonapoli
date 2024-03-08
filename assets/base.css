@@ -3,4 +3,25 @@
   font-family: "Inter", Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#footer {
+  padding-left: 16px;
+  padding-right: 16px;
 }
