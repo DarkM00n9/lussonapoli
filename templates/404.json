@@ -1,17 +1,9 @@
 {
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
     "main-content": {
       "type": "custom-404",
       "settings": {}
-    },
-    "footer": {
-      "type": "footer",
-      "settings": {}
     }
   },
-  "order": ["header", "main-content", "footer"]
+  "order": ["main-content"]
 }
