@@ -37,9 +37,35 @@
   </head>
 
   <body>
-    <main role="main">
+    <header id="header" data-bg-color="{{ settings.header_background_color }}" data-bg-opacity="{{ settings.header_background_opacity }}">
+  <nav>
+    {% if settings.header_logo %}
+      <a href="/">
+        <img src="{{ settings.header_logo | img_url: 'master' }}" alt="{{ shop.name }}" style="max-width: {{ settings.header_logo_size }}px;"/>
+      </a> 
+    {% else %}
+      <a href="/">{{ 'Logo' }}</a>
+    {% endif %}
+    <ol>
+      <span>Cart</span>
+    </ol>
+
+  </nav>
+</header>
+
+    <main id="main" role="main">
     {{ content_for_layout }}
     </main>
 
+    <footer id="footer" data-bg-color="{{ settings.footer_background_color }}" data-bg-opacity="{{ settings.footer_background_opacity }}">
+  <section>
+    <div><span>Discount function</span></div>
+    <div id="footer-legal">
+      <span>©2024 All rights reserved</span>
+      <span>Use of this Site is subject to terms of use. By using this site, you signify that you agree to the bound by these Terms of Service.</span>
+    </div>
+  </section>
+</footer>
+    {{ 'theme-functions.js' | asset_url | script_tag }}
   </body>
 </html>
