@@ -43,5 +43,26 @@
         "unit": "px"
       }
     ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "footer_background_color",
+        "label": "Footer Background Color",
+        "default": "#181818"
+      },
+      {
+        "type": "range",
+        "id": "footer_background_opacity",
+        "label": "Footer Background Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 95,
+        "unit": "%"
+      }
+    ]
   }
 ]
