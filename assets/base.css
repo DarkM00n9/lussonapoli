@@ -33,6 +33,12 @@
 
 #footer section {
   display: flex;
+  gap: 12px;
   flex-direction: column;
   text-align: center;
+}
+#footer section #footer-legal {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
 }
