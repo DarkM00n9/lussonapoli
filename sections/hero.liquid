@@ -13,6 +13,7 @@
   document.addEventListener("DOMContentLoaded", function() {
     var slides = document.querySelectorAll('.carousel-slide');
     var currentIndex = 0;
+    console.log(slides);
     setInterval(function() {
       slides[currentIndex].classList.remove('active');
       currentIndex = (currentIndex + 1) % slides.length;
