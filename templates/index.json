@@ -3,6 +3,9 @@
     "main-body": {
       "type": "main"
     }
+    "hero": {
+      "type": "hero"
+    }
   },
-  "order": ["main-body"]
+  "order": ["main-body", "hero"]
 }
