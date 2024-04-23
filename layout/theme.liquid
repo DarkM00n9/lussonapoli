@@ -47,7 +47,11 @@
       <a href="/">{{ 'Logo' }}</a>
     {% endif %}
     <ol>
-      <span>Cart</span>
+      <span>
+          <svg class="cart-icon" aria-hidden="true" focusable="false">
+          <use xlink:href="{{ 'shopping_cart_false.svg' | asset_url }}"></use>
+          </svg>
+</span>
       <button class="hamburger-icon" aria-label="Open menu" onclick="toggleMenu()">
       <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="30" height="5" rx="2.5" fill="#EEEEEE"/>
@@ -81,7 +85,6 @@
 
     <footer id="footer" data-bg-color="{{ settings.footer_background_color }}" data-bg-opacity="{{ settings.footer_background_opacity }}">
   <section>
-    <div><span>Discount function</span></div>
     <div id="footer-legal">
       <span>©2024 All rights reserved</span>
       <span>Use of this Site is subject to terms of use. By using this site, you signify that you agree to the bound by these Terms of Service.</span>
