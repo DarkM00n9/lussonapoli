@@ -2,7 +2,7 @@
   "sections": {
     "main-body": {
       "type": "main"
-    }
+    },
     "hero-section": {
       "type": "hero"
     }
