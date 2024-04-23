@@ -64,5 +64,48 @@
         "unit": "%"
       }
     ]
+  },
+  {
+    "name": "Hero Carousel",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Carousel Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_1",
+        "label": "Carousel Image 1",
+        "info": "First image in the carousel"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_2",
+        "label": "Carousel Image 2",
+        "info": "Second image in the carousel"
+      },
+      {
+        "type": "text",
+        "id": "carousel_image_desc_1",
+        "label": "Image 1 Description",
+        "default": "Describe the first product or feature."
+      },
+      {
+        "type": "text",
+        "id": "carousel_image_desc_2",
+        "label": "Image 2 Description",
+        "default": "Describe the second product or feature."
+      },
+      {
+        "type": "range",
+        "id": "carousel_speed",
+        "label": "Carousel Transition Interval",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "default": 5,
+        "unit": "sec"
+      }
+    ]
   }
 ]
