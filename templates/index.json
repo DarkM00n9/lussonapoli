@@ -1,11 +1,8 @@
 {
   "sections": {
-    "main-body": {
-      "type": "main"
-    },
     "hero-section": {
       "type": "hero"
     }
   },
-  "order": ["main-body", "hero-section"]
+  "order": ["hero-section"]
 }
