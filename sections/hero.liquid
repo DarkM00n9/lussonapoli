@@ -1,1 +1,22 @@
-<h2>Hero Carousel</h2>
+<section class="hero-carousel">
+  {% for i in (1..2) %}
+    {% capture image_id %}carousel_image_{{ i }}{% endcapture %}
+    {% capture desc_id %}carousel_image_desc_{{ i }}{% endcapture %}
+    {% if section.settings[image_id] != blank %}
+      <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ section.settings[image_id] | img_url: '1024x' }}');">
+        <p>{{ section.settings[desc_id] }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var slides = document.querySelectorAll('.carousel-slide');
+    var currentIndex = 0;
+    setInterval(function() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }, {{ section.settings.carousel_speed | times: 1000 }});
+  });
+</script>
