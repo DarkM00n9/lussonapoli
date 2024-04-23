@@ -3,9 +3,9 @@
     "main-body": {
       "type": "main"
     }
-    "hero": {
+    "hero-section": {
       "type": "hero"
     }
   },
-  "order": ["main-body", "hero"]
+  "order": ["main-body", "hero-section"]
 }
