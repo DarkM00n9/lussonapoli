@@ -7,6 +7,7 @@
     },
     "test-section": {
       "type": "test",
+      "disabled": true,
       "settings": {
       }
     }
