@@ -1,9 +1,11 @@
 <section class="hero-carousel">
-  {% for i in (1..2) %}
-    {% capture image_id %}carousel_image_{{ i }}{% endcapture %}
-    {% capture desc_id %}carousel_image_desc_{{ i }}{% endcapture %}
+  {% for i in (1..2) %}  
+    {% assign image_id = 'carousel_image_' | append: i %}
+    {% assign desc_id = 'carousel_image_desc_' | append: i %}
+    
     {% if section.settings[image_id] != blank %}
-      <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ section.settings[image_id] | image_url: '1024x1024' }}'); background-size: cover; background-position: center;">
+      <div class="carousel-slide{% if forloop.first %} active{% endif %}">
+        <img src="{{ section.settings[image_id] | img_url: '1024x1024' }}" alt="{{ section.settings[desc_id] }}">
         <p>{{ section.settings[desc_id] }}</p>
       </div>
     {% endif %}
@@ -13,20 +15,6 @@
     <button>Try out</button>
   </div>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var slides = document.querySelectorAll('.carousel-slide');
-    var currentIndex = 0;
-    if (slides.length > 1) {  
-      setInterval(function() {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-      }, {{ section.settings.carousel_speed | times: 1000 }});
-    }
-  });
-</script>
 
 <style>
 .hero-carousel-call-actions {
