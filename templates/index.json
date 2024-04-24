@@ -2,7 +2,10 @@
   "sections": {
     "hero-section": {
       "type": "hero"
+    },
+    "test-section": {
+      "type": "test"
     }
   },
-  "order": ["hero-section"]
+  "order": ["hero-section", "test-section"]
 }
