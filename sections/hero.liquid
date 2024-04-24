@@ -9,16 +9,18 @@
     {% endif %}
   {% endfor %}
 </section>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var slides = document.querySelectorAll('.carousel-slide');
     var currentIndex = 0;
-    console.log(slides);
-    setInterval(function() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
-    }, {{ section.settings.carousel_speed | times: 1000 }});
+    if (slides.length > 1) {  
+      setInterval(function() {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+      }, {{ section.settings.carousel_speed | times: 1000 }});
+    }
   });
 </script>
 
