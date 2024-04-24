@@ -3,7 +3,7 @@
     {% assign image_id = 'carousel_image_' | append: i %}
     {% assign desc_id = 'carousel_image_desc_' | append: i %}
     
-    {% if section.settings[image_id] != blank %}
+    {% if section.settings[image_id] == blank %}
       <div class="carousel-slide{% if forloop.first %} active{% endif %}">
         <img src="{{ section.settings[image_id] | img_url: '1024x1024' }}" alt="{{ section.settings[desc_id] }} width="250" height="250" />
         <p>{{ section.settings[desc_id] }}</p>
