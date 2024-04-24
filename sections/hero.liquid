@@ -3,6 +3,7 @@
     {% capture image_id %}carousel_image_{{ i }}{% endcapture %}
     {% capture desc_id %}carousel_image_desc_{{ i }}{% endcapture %}
     {% if section.settings[image_id] != blank %}
+      <img src="{{ section.settings[image_id] | img_url: '1024x' }}" alt="Test Image">
       <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ section.settings[image_id] | img_url: '1024x' }}');">
         <p>{{ section.settings[desc_id] }}</p>
       </div>
@@ -29,6 +30,7 @@
     position: relative;
     width: 100%;
     height: 300px;
+    border: 2px red solid;
   }
   .carousel-slide {
     width: 100%;
