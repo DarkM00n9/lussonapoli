@@ -95,6 +95,16 @@
         "id": "carousel_image_desc_2",
         "label": "Image 2 Description",
         "default": "Describe the second product or feature."
+      },
+      {
+        "type": "range",
+        "id": "carousel_speed",
+        "label": "Carousel Transition Interval",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "default": 5,
+        "unit": "sec"
       }
     ]
   }

@@ -1,21 +1,7 @@
 <section class="hero-carousel">
-  {% for i in (1..2) %}
-    {% assign image_id = 'carousel_image_' | append: i %}
-    {% assign desc_id = 'carousel_image_desc_' | append: i %}
-
-    {% if section.settings[image_id] == blank %}
-      <div class="carousel-slide{% if forloop.first %} active{% endif %}">
-        <img
-          src="{{ section.settings[image_id] | image_url: '1024x1024' }}"
-          alt="{{ section.settings[desc_id] }}"
-          width="250"
-          height="250"
-        >
-        <p>{{ section.settings[desc_id] }}</p>
-        <h1>Hero Carousel</h1>
-      </div>
+    {% if settings.carousel_image_1 %}
+        <img src="{{ settings.carousel_image_1 | img_url: 'master' }}" alt="{{ shop.name }}" />
     {% endif %}
-  {% endfor %}
   <div class="hero-carousel-call-actions">
     <button>Buy now</button>
     <button>Try out</button>
@@ -23,25 +9,28 @@
 </section>
 
 <style>
-  .hero-carousel-call-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    }
-    .hero-carousel {
-      position: relative;
-      width: 100%;
-      height: 300px;
-    }
-    .carousel-slide {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: none;
-    }
-    .carousel-slide.active {
-      display: block;
-    }
+.hero-carousel-call-actions {
+  display: flex;
+  justify-content: space-between;
+  border: 2px red solid;
+  padding: 54px;
+  gap: 50px;
+  }
+  .hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+  }
+  .carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .carousel-slide.active {
+    display: block;
+  }
 </style>
+
