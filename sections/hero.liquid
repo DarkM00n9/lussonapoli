@@ -1,7 +1,15 @@
 <section class="hero-carousel">
-  {% if settings.carousel_image_1 %}
-    <img src="{{ settings.carousel_image_1 | image_url: height: 300| image_tag: width: 300 }}">
-  {% endif %}
+  <div class="carousel-slides">
+    {% for i in (1..2) %}
+       {% assign image_key = 'carousel_image_' | append: i %}
+      {% if settings[image_key] %}
+        <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ settings[image_key] | image_url: 'master' }}');">
+          {% assign desc_key = 'carousel_image_desc_' | append: i %}
+          <p class="slide-description">{{ settings[desc_key] }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
   <div class="hero-carousel-call-actions">
     <button>Buy now</button>
     <button>Try out</button>
@@ -9,27 +17,63 @@
 </section>
 
 <style>
+  .carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: none;
+  }
+  .carousel-slide.active {
+    display: block;
+  }
   .hero-carousel-call-actions {
     display: flex;
     justify-content: space-between;
     border: 2px red solid;
     padding: 54px;
     gap: 50px;
-    }
-    .hero-carousel {
-      position: relative;
-      width: 100%;
-      height: 300px;
-    }
-    .carousel-slide {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: none;
-    }
-    .carousel-slide.active {
-      display: block;
-    }
+  }
+  .slide-description {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var slides = document.querySelectorAll('.carousel-slide');
+    var currentIndex = 0;
+    var changeSlide = function() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    };
+    var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
+    setInterval(changeSlide, interval);
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+          var slides = document.querySelectorAll('.carousel-slide');
+          var currentIndex = 0;
+          var changeSlide = function() {
+                  slides[currentIndex].classList.remove('active');
+                  currentIndex = (currentIndex + 1) % slides.length;
+                  slides[currentIndex].classList.add('active');
+                };
+          var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
+          setInterval(changeSlide, interval);
+        });
+</script>
