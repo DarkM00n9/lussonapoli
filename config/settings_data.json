@@ -4,6 +4,9 @@
     "header_logo_size": 50,
     "carousel_image_1": "shopify:\/\/shop_images\/doberman_ready.png",
     "carousel_image_2": "shopify:\/\/shop_images\/icon.png",
+    "carousel_image_desc_1": "first",
+    "carousel_image_desc_2": "second",
+    "carousel_speed": 9,
     "content_for_index": [
 
     ]
