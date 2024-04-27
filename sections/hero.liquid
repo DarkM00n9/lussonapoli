@@ -17,10 +17,11 @@
 </section>
 
 <style>
-.hero-carousel {
-  display: flex;
-  flex-direction: column;
-}
+  .hero-carousel {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+  }
   .hero-carousel-call-actions {
     display: flex;
     justify-content: space-between;
@@ -58,6 +59,19 @@
 </style>
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var slides = document.querySelectorAll('.carousel-slide');
+    var currentIndex = 0;
+    var changeSlide = function() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    };
+    var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
+    setInterval(changeSlide, interval);
+  });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
           var slides = document.querySelectorAll('.carousel-slide');
