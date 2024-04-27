@@ -6,6 +6,20 @@
   box-sizing: border-box;
 }
 
+button {
+  padding: 15px 32px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #121212;
+  color: #fff;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.6;
+}
 #header {
   padding-top: 25px;
   padding-left: 16px;

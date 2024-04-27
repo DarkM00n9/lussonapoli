@@ -18,7 +18,6 @@
 
 <style>
 .hero-carousel {
-  border: 5px green solid;
   display: flex;
   flex-direction: column;
 }
@@ -28,8 +27,8 @@
   }
   .carousel-slides {
     position: relative;
-    width: 100%; /* Ensures the slider takes full width of its container */
-    height: 300px; /* Adjust the height as necessary */
+    margin: 0;
+    width: 100%;
     overflow: hidden;
   }
   .carousel-slide {
@@ -38,40 +37,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover; /* Covers the full area of the div, no stretching */
-    background-position: center; /* Center the background image */
-    display: none; /* Hide slides initially */
-    background-color: red;
+    background-size: cover; 
+    background-position: center; 
+    display: none; 
   }
   .carousel-slide.active {
-    display: block; /* Only the active slide is displayed */
+    display: block; 
   }
   .slide-description {
     position: absolute;
     bottom: 20px;
     left: 20px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 10px;
-    width: calc(100% - 40px); /* Ensures padding does not push it out of view */
-    box-sizing: border-box; /* Ensures padding is included in width */
+    text-align: center;
+    width: calc(100% - 40px); 
+    box-sizing: border-box; 
   }
 </style>
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var slides = document.querySelectorAll('.carousel-slide');
-    var currentIndex = 0;
-    var changeSlide = function() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
-    };
-    var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
-    setInterval(changeSlide, interval);
-  });
-</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
           var slides = document.querySelectorAll('.carousel-slide');
