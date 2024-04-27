@@ -4,9 +4,15 @@
       "type": "hero",
       "settings": {
       }
+    },
+    "features-section": {
+      "type": "features",
+      "settings": {
+      }
     }
   },
   "order": [
-    "hero-section"
+    "hero-section",
+    "features-section"
   ]
 }
