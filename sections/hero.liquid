@@ -1,9 +1,12 @@
 <section class="hero-carousel">
   <div class="carousel-slides">
     {% for i in (1..2) %}
-       {% assign image_key = 'carousel_image_' | append: i %}
+      {% assign image_key = 'carousel_image_' | append: i %}
       {% if settings[image_key] %}
-        <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ settings[image_key] | image_url: '200' | image_tag }}');">
+        <div
+          class="carousel-slide{% if forloop.first %} active{% endif %}"
+          style="background-image: url('{{ settings[image_key] | image_url: '200' }}');"
+        >
           {% assign desc_key = 'carousel_image_desc_' | append: i %}
           <p class="slide-description">{{ settings[desc_key] }}</p>
         </div>
@@ -62,7 +65,6 @@
   }
 </style>
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var slides = document.querySelectorAll('.carousel-slide');
@@ -77,15 +79,15 @@
   });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-          var slides = document.querySelectorAll('.carousel-slide');
-          var currentIndex = 0;
-          var changeSlide = function() {
-                  slides[currentIndex].classList.remove('active');
-                  currentIndex = (currentIndex + 1) % slides.length;
-                  slides[currentIndex].classList.add('active');
-                };
-          var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
-          setInterval(changeSlide, interval);
-        });
+  document.addEventListener('DOMContentLoaded', function() {
+        var slides = document.querySelectorAll('.carousel-slide');
+        var currentIndex = 0;
+        var changeSlide = function() {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('active');
+              };
+        var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
+        setInterval(changeSlide, interval);
+      });
 </script>
