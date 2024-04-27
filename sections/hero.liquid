@@ -3,7 +3,7 @@
     {% for i in (1..2) %}
        {% assign image_key = 'carousel_image_' | append: i %}
       {% if settings[image_key] %}
-        <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ settings[image_key] | image_url: 'master' }}');">
+        <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ settings[image_key] | image_url: '200' | image_tag }}');">
           {% assign desc_key = 'carousel_image_desc_' | append: i %}
           <p class="slide-description">{{ settings[desc_key] }}</p>
         </div>
@@ -13,26 +13,30 @@
   <div class="hero-carousel-call-actions">
     <button>Buy now</button>
     <button>Try out</button>
+    <button>Third</button>
   </div>
 </section>
 
 <style>
   .carousel-slides {
     position: relative;
-    width: 100%;
-    height: 300px;
+    width: 100%; /* Ensures the slider takes full width of its container */
+    height: 300px; /* Adjust the height as necessary */
     overflow: hidden;
   }
   .carousel-slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: none;
+    background-size: cover; /* Covers the full area of the div, no stretching */
+    background-position: center; /* Center the background image */
+    display: none; /* Hide slides initially */
+    background-color: red;
   }
   .carousel-slide.active {
-    display: block;
+    display: block; /* Only the active slide is displayed */
   }
   .hero-carousel-call-actions {
     display: flex;
@@ -40,16 +44,24 @@
     border: 2px red solid;
     padding: 54px;
     gap: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ensures action buttons span the full width */
+    background-color: rgba(0,0,0,0.3); /* Optional: Adds a slight background for visibility */
   }
   .slide-description {
     position: absolute;
     bottom: 20px;
     left: 20px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
     padding: 10px;
+    width: calc(100% - 40px); /* Ensures padding does not push it out of view */
+    box-sizing: border-box; /* Ensures padding is included in width */
   }
 </style>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
