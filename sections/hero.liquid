@@ -5,7 +5,7 @@
       {% if settings[image_key] %}
         <img
           class="carousel-slide{% if forloop.first %} active{% endif %}"
-          src="{{ settings[image_key] | img_url: 'master'}};"
+          src="{{ settings[image_key] | img_url: 'master' | img_tag: width:200}};"
         >
         {% assign desc_key = 'carousel_image_desc_' | append: i %}
         <p class="slide-description">{{ settings[desc_key] }}</p>
