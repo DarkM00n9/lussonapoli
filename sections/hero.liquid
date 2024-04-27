@@ -3,12 +3,12 @@
     {% for i in (1..2) %}
       {% assign image_key = 'carousel_image_' | append: i %}
       {% if settings[image_key] %}
-        <div
+        <img
           class="carousel-slide{% if forloop.first %} active{% endif %}"
           style="background-image: url('{{ settings[image_key] | image_url: '200' }}');"
         >
-          {% assign desc_key = 'carousel_image_desc_' | append: i %}
-          <p class="slide-description">{{ settings[desc_key] }}</p>
+        {% assign desc_key = 'carousel_image_desc_' | append: i %}
+        <p class="slide-description">{{ settings[desc_key] }}</p>
         </div>
       {% endif %}
     {% endfor %}
