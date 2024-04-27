@@ -1,14 +1,11 @@
 <section class="hero-carousel">
   <div class="carousel-slides">
     {% for i in (1..2) %}
-      {% assign image_key = 'carousel_image_' | append: i %}
+       {% assign image_key = 'carousel_image_' | append: i %}
       {% if settings[image_key] %}
-        <img
-          class="carousel-slide{% if forloop.first %} active{% endif %}"
-          src="{{ settings[image_key] | image_url: width: 500, height: 500 }}"
-        >
-        {% assign desc_key = 'carousel_image_desc_' | append: i %}
-        <p class="slide-description">{{ settings[desc_key] }}</p>
+        <div class="carousel-slide{% if forloop.first %} active{% endif %}" style="background-image: url('{{ settings[image_key] | image_url: width: 500, height: 500 }}');">
+          {% assign desc_key = 'carousel_image_desc_' | append: i %}
+          <p class="slide-description">{{ settings[desc_key] }}</p>
         </div>
       {% endif %}
     {% endfor %}
@@ -16,11 +13,13 @@
   <div class="hero-carousel-call-actions">
     <button>Buy now</button>
     <button>Try out</button>
-    <button>Third</button>
   </div>
 </section>
 
 <style>
+.hero-carousel {
+  border: 5px green solid;
+}
   .carousel-slides {
     position: relative;
     width: 100%; /* Ensures the slider takes full width of its container */
@@ -65,6 +64,7 @@
   }
 </style>
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var slides = document.querySelectorAll('.carousel-slide');
@@ -79,15 +79,15 @@
   });
 </script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-        var slides = document.querySelectorAll('.carousel-slide');
-        var currentIndex = 0;
-        var changeSlide = function() {
-                slides[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % slides.length;
-                slides[currentIndex].classList.add('active');
-              };
-        var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
-        setInterval(changeSlide, interval);
-      });
+    document.addEventListener('DOMContentLoaded', function() {
+          var slides = document.querySelectorAll('.carousel-slide');
+          var currentIndex = 0;
+          var changeSlide = function() {
+                  slides[currentIndex].classList.remove('active');
+                  currentIndex = (currentIndex + 1) % slides.length;
+                  slides[currentIndex].classList.add('active');
+                };
+          var interval = {{ settings.carousel_speed | default: 5 }} * 1000;
+          setInterval(changeSlide, interval);
+        });
 </script>
