@@ -3,7 +3,8 @@
     "header_logo": "shopify:\/\/shop_images\/icon.png",
     "header_logo_size": 50,
     "carousel_image_1": "shopify:\/\/shop_images\/doberman_ready.png",
-    "carousel_image_2": "shopify:\/\/shop_images\/icon.png",
+    "carousel_image_2": "shopify:\/\/shop_images\/doberman_ready.png",
+    "carousel_speed": 5,
     "content_for_index": [
 
     ]
