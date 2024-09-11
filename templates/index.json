@@ -1,18 +1,4 @@
 {
-  "sections": {
-    "hero-section": {
-      "type": "hero",
-      "settings": {
-      }
-    },
-    "features-section": {
-      "type": "features",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "hero-section",
-    "features-section"
-  ]
+  "sections": {},
+  "order": []
 }
