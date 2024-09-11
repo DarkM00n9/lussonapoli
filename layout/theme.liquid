@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
@@ -36,43 +37,9 @@
    {{ 'base.css' | asset_url | stylesheet_tag }}
   </head>
 
-  <body>
-    <header id="header" data-bg-color="{{ settings.header_background_color }}" data-bg-opacity="{{ settings.header_background_opacity }}">
-  <nav>
-    {% if settings.header_logo %}
-      <a href="/">
-        <img src="{{ settings.header_logo | img_url: 'master' }}" alt="{{ shop.name }}" style="max-width: {{ settings.header_logo_size }}px;"/>
-      </a> 
-    {% else %}
-      <a href="/">{{ 'Logo' }}</a>
-    {% endif %}
-    <ol>
-      <button class="hamburger-icon" aria-label="Open menu" onclick="toggleMenu()">
-      <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="30" height="5" rx="2.5" fill="#EEEEEE"/>
-      <rect y="12" width="30" height="5" rx="2.5" fill="#EEEEEE"/>
-      <rect y="23" width="30" height="5" rx="2.5" fill="#EEEEEE"/>
-      </svg>
-      </button>
-<div id="slideMenu" class="slide-menu">
-  <button class="close-menu" aria-label="Close menu" onclick="toggleMenu()">
-  <svg width="30px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#121212">
-  <g stroke-width="0"/>
-  <g stroke-linecap="round" stroke-linejoin="round"/>
-  <g> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#181818"/> </g>
-  </svg>
-  </button>
-  <nav id="mobile-navigation">
-    <ul>
-      {% for link in linklists.main-menu.links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-</div>
-    </ol>
-  </nav>
-</header>
+<body>
+  <header id="header" data-bg-color="{{ settings.header_background_color }}" data-bg-opacity="{{ settings.header_background_opacity }}">
+  </header>
 
     <main id="main" role="main">
     {{ content_for_layout }}
@@ -85,17 +52,5 @@
       <span>Use of this Site is subject to terms of use. By using this site, you signify that you agree to the bound by these Terms of Service.</span>
     </div>
   </section>
-</footer>
-    {{ 'theme-functions.js' | asset_url | script_tag }}
-    <script>
-function toggleMenu() {
-  var menu = document.getElementById("slideMenu");
-  if (menu.classList.contains("open")) {
-    menu.classList.remove("open");
-  } else {
-    menu.classList.add("open");
-  }
-}
-    </script>
   </body>
 </html>
