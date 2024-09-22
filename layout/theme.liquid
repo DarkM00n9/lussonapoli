@@ -30,6 +30,7 @@
 
     {% if page_description -%}
       <meta name="description" content="{{ page_description | truncate: 150 }}">
+      <meta name="description" content="{{ page_description | escape }}" />
     {% endif %}
 
     {{ content_for_header }}
@@ -40,6 +41,9 @@
 <body>
     <main id="main" role="main">
     {{ content_for_layout }}
+    <hr>
+    <h1 align="center" >Test development theme.liquid</h1>
+    <hr>
     </main>
 
     <footer id="footer" data-bg-color="{{ settings.footer_background_color }}" data-bg-opacity="{{ settings.footer_background_opacity }}">
