@@ -1,5 +1,5 @@
 <section class="custom-404">
-    <h1>404 test</h1>
+    <h1>404 Development</h1>
 <style>
 
 .custom-404 h1 {
@@ -10,26 +10,5 @@
   padding: 50px; 
 }
   </style>
-
-
-  {%- assign name = 'kaw' -%}
-  {%- assign strings = "a, random, string" | split: ", " -%}
-
-  <br>
-  <hr>
-  {% for string in strings %}
-    {{ string }}
-  {% endfor %}
-
-  <br>
-  {% if name == 'William' or name.size >= 3 %}
-    {{ name | prepend: 'Welecome back, '}}
-  {% else %}
-    {% assign error = 'Something went wrong' %}
-    <h2 style="font-weight:bold; color:red;">{{ error | prepend: 'Error: ' }}</h2>
-    <br>
-    <p>Your name: {{ name }} and it's only {{ name | size }} characters</p>
-  {% endif %}
-
 </section>
 
