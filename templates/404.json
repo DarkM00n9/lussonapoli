@@ -1,9 +1,9 @@
 {
   "sections": {
-    "main-content": {
-      "type": "custom-404",
+    "main": {
+      "type": "404",
       "settings": {}
     }
   },
-  "order": ["main-content"]
+  "order": ["main"]
 }
