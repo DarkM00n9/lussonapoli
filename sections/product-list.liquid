@@ -1,0 +1,45 @@
+<style>
+      #products {
+        display: flex;
+        justify-content: space-between;
+        gap: 2px;
+        row-gap: 100px;
+        flex-wrap: wrap;
+      }
+      .product {
+        display: flex;
+        width: min-content;
+        border: 1px #eee solid;
+        flex-direction: column-reverse;
+      }
+      .product h2 {
+        text-align: center;
+      }
+      .product-image {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .product-image img {
+        object-fit: contain;
+        width: auto;
+        height: 300px;
+        border-radius: 16px;
+      }
+    </style>
+{% assign collection = settings.collection %}
+<section id="products">
+  {% for product in collections['frontpage'].products %}
+    <div class="product" id="{{ product.id }}" style="cursor: pointer;">
+      <a style="text-decoration:none; text-align: center; color: #121212;" href="{{ product.url }}">
+        <h2>{{ product.title }}</h2>
+        <span style="text-align: center;">{{ product.price | money }}</span>
+        <div class="product-image">
+          <img src="{{ product.featured_image | img_url: 'large' }}" alt="product image" style="border-radius:8px;" />
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
