@@ -8,11 +8,10 @@
 * ------------------------------------------------------------
 */
 {
-  "sections": {
-    "main-404": {
-      "type": "404",
-      "settings": {}
-    }
+  "parent": "index.json",
+  "context": {
+    "market": "us"
   },
-  "order": ["main-404"]
+  "sections": {
+  }
 }
