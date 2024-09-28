@@ -1,6 +1,9 @@
-<h1>this is product liq</h1>
-lorem on lorem for such product of this 
+<h1>{{ product.title }}</h1>
 <br>
 {{ product.title }}<br>
 <img src="{{ product.featured_image | img_url: 'large' }}" />
 
+{% form 'product', product %}
+  <input type="submit" value="Add to cart">
+  {{ form | payment_button }}
+{% endform %}
