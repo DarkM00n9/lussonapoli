@@ -3,7 +3,11 @@
     "main-404": {
       "type": "404",
       "settings": {}
+    }.
+    "main-product": {
+      "type": "product",
+      "settings": {}
     }
   },
-  "order": ["main-404"]
+  "order": ["main-product","main-404"]
 }
