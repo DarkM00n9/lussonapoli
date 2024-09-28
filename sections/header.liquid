@@ -1,7 +1,11 @@
 <header id="header"> 
   <div class="logo">
     <a href="{{ shop.url }}">
-      <img src="{{ settings.logo | image_url: 'large' }}" alt="{{ shop.name }}" />
+      {% if settings.logo %}
+        <img src="{{ settings.logo | image_url: 'large' | image_tag }}" alt="{{ shop.name }}" />
+      {% else %}
+        <span>No logo available</span>
+      {% endif %}
     </a>
   </div>
   <nav>
