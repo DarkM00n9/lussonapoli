@@ -12,9 +12,10 @@
     "product-list": {
       "type": "product-list",
       "settings": {
-        "collection": "frontpage"
       }
     }
   },
-  "order": ["product-list"]
+  "order": [
+    "product-list"
+  ]
 }
