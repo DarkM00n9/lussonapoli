@@ -1,0 +1,27 @@
+<header id="header"> 
+  <div class="logo">
+    <a href="{{ shop.url }}">
+      <img src="{{ settings.logo | image_url: 'large' }}" alt="{{ shop.name }}" />
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/">Development</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+{%- schema -%}
+{
+"name": "Header",
+"settings": [
+  {
+  "type": "image_picker",
+  "id": "logo",
+  "label": "Logo"
+  }
+]
+}
+{%- endschema -%}
+
