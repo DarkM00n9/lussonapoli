@@ -8,13 +8,10 @@
 * ------------------------------------------------------------
 */
 {
-  "sections": {
-    "product-list": {
-      "type": "product-list",
-      "settings": {
-        "collection": "frontpage"
-      }
-    }
+  "parent": "index.json",
+  "context": {
+    "market": "us"
   },
-  "order": ["product-list"]
+  "sections": {
+  }
 }
