@@ -9,10 +9,12 @@
 */
 {
   "sections": {
-    "main-404": {
-      "type": "404",
-      "settings": {}
+    "product-list": {
+      "type": "product-list",
+      "settings": {
+        "collection": "frontpage"
+      }
     }
   },
-  "order": ["main-404"]
+  "order": ["product-list"]
 }
