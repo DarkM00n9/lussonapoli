@@ -6,107 +6,40 @@
   box-sizing: border-box;
 }
 
-.hero-carousel-button {
-  padding: 15px 32px;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  background-color: #121212;
-  color: #fff;
-  opacity: 1;
-  transition: 0.3s;
-}
-
-.hero-carousel-button:hover {
-  opacity: 0.6;
-}
-#header {
-  padding-top: 25px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 25px;
-}
-
-#header nav {
+header {
   display: flex;
+  padding: 0 2em 0 2em;
   justify-content: space-between;
 }
 
-#footer {
-  color: #fff;
-  padding-top: 33px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 25px;
+nav ul {
+  gap: 7px;
+  justify-content: center;
 }
 
-#footer section {
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  text-align: center;
-}
-#footer section #footer-legal {
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-}
-
-.hamburger-icon {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 24px;
-}
-.slide-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  transition: right 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-#mobile-navigation {
-  margin-top: 50px;
-  border: 1px #eee solid;
-  padding: 12px;
-  border-radius: 100px;
-  height: 590px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-#mobile-navigation ul {
-  width: 100%;
-  text-align: center;
+nav ul > li {
   list-style: none;
-  font-weight: bold;
-  padding: 25px;
+  padding: 1.5em;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  color: #181818 !important;
-}
-.slide-menu.open {
-  right: 0;
 }
 
-.close-menu {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 24px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding-right: 2px;
+nav ul {
+  display: flex;
+}
+ 
+main, footer {
+  padding: 0 2em 0 2em;
 }
 
-.cart-icon {
-  border: 2px red solid;
+footer {
+  height: 12vh;
+  text-align: center;
+  padding-top: 1.5em;
 }
