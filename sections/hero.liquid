@@ -2,6 +2,8 @@
 #hero {
   border: 1px red solid;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>
 <section id="hero" class="hero">
@@ -11,9 +13,8 @@
   </div>
   <div class="hero-image">
     <img 
-      src="{{ section.settings.hero_image | img_url: 'master' }}" 
+      src="{{ section.settings.hero_image | img_url: 'large' }}" 
       alt="{{ section.settings.hero_image_alt }}"
-      width="600"
     >
   </div>
 </section>
