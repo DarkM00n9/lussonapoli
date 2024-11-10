@@ -8,14 +8,21 @@
 </style>
 <section id="hero" class="hero">
   <div class="hero-content">
-    <h1>{{ section.settings.hero_title }}</h1>
-    <p>{{ section.settings.hero_description }}</p>
+     <h1>{{ section.settings.hero_title }}</h1>
+     <p>{{ section.settings.hero_description }}</p>
+    <div>
+      <button>Shop now</button>
+    </div>
   </div>
   <div class="hero-image">
-    <img 
-      src="{{ section.settings.hero_image | image_url: width: 300 }}" 
-      alt="{{ section.settings.hero_image_alt }}"
-    >
+    {%  if section.settings.hero_image %}
+      <img 
+      src="{{ section.settings.hero_image | file_img_url: 'large' }}" 
+        alt="{{ section.settings.hero_image_alt }}"
+      />
+    {% else %}
+      <span>No hero image found</span>
+    {% endif %}
   </div>
 </section>
 
