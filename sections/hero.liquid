@@ -1,6 +1,7 @@
 <style>
 #hero {
   border: 1px red solid;
+  display: flex;
 }
 </style>
 <section id="hero" class="hero">
@@ -9,7 +10,11 @@
     <p>{{ section.settings.hero_description }}</p>
   </div>
   <div class="hero-image">
-    <img src="{{ section.settings.hero_image | img_url: 'large' }}" />
+    <img 
+      src="{{ section.settings.hero_image | img_url: 'master' }}" 
+      alt="{{ section.settings.hero_image_alt }}"
+      width="600"
+    >
   </div>
 </section>
 
@@ -33,6 +38,11 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero image",
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Hero alt",
     },
   ]
 }
