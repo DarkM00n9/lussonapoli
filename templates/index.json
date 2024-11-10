@@ -13,8 +13,7 @@
       "type": "hero",
       "settings": {
         "hero_title": "Lusso Napoli",
-        "hero_description": "Bespoke dress shoes, as sale, from show, display such, return text.",
-        "hero_image": "shopify://shop_images/men-with-dress-shoes.jpg"
+        "hero_description": "Bespoke dress shoes, as sale, from show, display such, return text from developer."
       }
     },
     "product-list": {
