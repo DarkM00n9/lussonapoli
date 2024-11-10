@@ -3,6 +3,31 @@
   border: 1px red solid;
 }
 </style>
-<section id="hero">
-  <h1>Hero Lusso Napoli</h1>
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>{{ section.settings.hero_title }}</h1>
+    <p>{{ secion.settings.hero_description }}</p>
+  </div>
+  <div class="hero-image">
+  </div>
 </section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+     "type": "text",
+     "id": "hero_title",
+     "label": "Hero title",
+     "default": "Lusso Napoli",
+    },
+    {
+      "type": "textarea",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "Bespoke dress shoes, as sale, from show, display such, return text.",
+    }
+  ]
+}
+{% endschema %}
