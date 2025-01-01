@@ -7,6 +7,11 @@
 %}
 
 <header id="header" class="header">
+  {% if section.settings.logo != blank %}
+    <img src="{{ section.settings.logo | img_url: 'master' }}"  />
+  {% else %}
+    <span>{{ shop.name }}</span>
+  {% endif %}
   <nav role="navigation">
     {% for link in main_menu_linklist %}
       {% if link.links != blank %}
@@ -24,7 +29,6 @@
     </form>
   </nav>     
 </header>
-        
 
 {% schema %}
 {
@@ -35,6 +39,11 @@
       "id": "menu",
       "default": "main-menu",
       "label": "Heading Navigation Menu"
+      },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
     }
   ]
 }
